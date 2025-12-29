@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Work Experience</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ================= EXPERIENCE PAGE ONLY ================= */
+
+.experience-wrapper{
+  width:85%;
+  margin:40px auto;
+}
+
+/* ===== TITLE ===== */
+.experience-title{
+  text-align:center;
+  color:#ff4d4d;
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.experience-subtitle{
+  text-align:center;
+  color:#aaa;
+  margin-bottom:40px;
+}
+
+/* ===== EXPERIENCE CARD ===== */
+.experience-card{
+  display:flex;
+  align-items:center; /* CENTER CONTENT */
+  gap:50px;
+  padding:45px;
+  border-radius:28px;
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(24px);
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 0 30px rgba(255,0,0,.18);
+  margin-bottom:35px;
+}
+
+/* ===== LOGO (BESAR + CENTER) ===== */
+.experience-logo{
+  width:200px;
+  height:200px;
+  flex-shrink:0;
+  border-radius:30px;
+  background:rgba(0,0,0,.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+}
+
+.experience-logo img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
+
+/* ===== CONTENT ===== */
+.experience-content{
+  text-align:left;
+}
+
+.experience-content h3{
+  font-size:24px;
+  color:#fff;
+  margin-bottom:10px;
+}
+
+.experience-content h3 a{
+  color:#fff;
+  text-decoration:none;
+}
+
+.experience-content h3 a:hover{
+  color:#ff4d4d;
+  text-decoration:underline;
+}
+
+.experience-role{
+  color:#ff6a6a;
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+.experience-year{
+  display:inline-block;
+  padding:8px 20px;
+  border-radius:24px;
+  background:#ff4d4d;
+  color:#000;
+  font-weight:600;
+  font-size:14px;
+  margin-bottom:16px;
+}
+
+/* ===== JOB SCOPE ===== */
+.experience-scope{
+  margin-top:10px;
+  padding-left:20px;
+  color:#ccc;
+  line-height:1.7;
+}
+
+.experience-scope li{
+  margin-bottom:8px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .experience-card{
+    flex-direction:column;
+    text-align:center;
+    padding:40px 30px;
+  }
+
+  .experience-content{
+    text-align:left;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<div class="top-marquee">
+  <div class="marquee-track">Welcome to my website</div>
+</div>
+
+<nav class="navbar about-right">
+<ul>
+<li><a href="index.html">About Me</a></li>
+<li><a class="active" href="work-experience.html">Work Experience</a></li>
+<li><a href="education.html">Education</a></li>
+<li><a href="certificates.html">Certificates</a></li>
+<li><a href="song.html">Song</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<div class="datetime-wrapper">
+  <span id="datetime"></span>
+</div>
+
+<main class="experience-wrapper">
+
+<h2 class="experience-title">Work Experience</h2>
+<p class="experience-subtitle">My professional working background</p>
+
+<!-- ===== 1. IPRO AMPANG ===== -->
+<div class="experience-card">
+  <div class="experience-logo">
+    <img src="ipro-logo.png" alt="Ipro Ampang Logo">
+  </div>
+  <div class="experience-content">
+    <span class="experience-year">2022</span>
+    <h3>
+      <a href="https://www.google.com/maps/search/Ipro+Ampang" target="_blank">
+        Ipro Ampang
+      </a>
+    </h3>
+    <div class="experience-role">Admin</div>
+    <ul class="experience-scope">
+      <li>Handled daily administrative tasks at the mobile phone shop.</li>
+      <li>Managed customer records, sales documents, and basic paperwork.</li>
+      <li>Assisted in sales operations and customer service activities.</li>
+      <li>Supported overall shop operations and inventory coordination.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== 2. LEE COOPER ===== -->
+<div class="experience-card">
+  <div class="experience-logo">
+    <img src="lee-cooper-logo.png" alt="Lee Cooper Logo">
+  </div>
+  <div class="experience-content">
+    <span class="experience-year">2023</span>
+    <h3>
+      <a href="https://www.google.com/maps/search/SOGO+Kuala+Lumpur" target="_blank">
+        Lee Cooper
+      </a>
+    </h3>
+    <div class="experience-role">Sales Assistant</div>
+    <ul class="experience-scope">
+      <li>Assisted customers in selecting clothing and provided product information.</li>
+      <li>Handled sales transactions and operated the point-of-sale system.</li>
+      <li>Ensured product displays were neat, attractive, and well-organized.</li>
+      <li>Supported daily store operations and stock arrangement.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== 3. PADINI MEN ===== -->
+<div class="experience-card">
+  <div class="experience-logo">
+    <img src="padini-logo.png" alt="Padini Logo">
+  </div>
+  <div class="experience-content">
+    <span class="experience-year">2023</span>
+    <h3>
+      <a href="https://www.google.com/maps/search/SOGO+Kuala+Lumpur" target="_blank">
+        Padini Men
+      </a>
+    </h3>
+    <div class="experience-role">Sales Assistant</div>
+    <ul class="experience-scope">
+      <li>Provided customer assistance and product recommendations.</li>
+      <li>Handled sales transactions and customer inquiries.</li>
+      <li>Maintained cleanliness and organization of the retail area.</li>
+      <li>Assisted with stock arrangement and inventory monitoring.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== 4. DUCATI MEN ===== -->
+<div class="experience-card">
+  <div class="experience-logo">
+    <img src="ducati-logo.png" alt="Ducati Logo">
+  </div>
+  <div class="experience-content">
+    <span class="experience-year">2023 – 2024</span>
+    <h3>
+      <a href="https://www.google.com/maps/search/SOGO+Kuala+Lumpur" target="_blank">
+        Ducati Men
+      </a>
+    </h3>
+    <div class="experience-role">Sales Assistant</div>
+    <ul class="experience-scope">
+      <li>Assisted customers in selecting premium apparel and merchandise.</li>
+      <li>Provided product knowledge and brand information.</li>
+      <li>Handled sales transactions and supported store operations.</li>
+      <li>Ensured merchandise display met brand standards.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== 5. FGV PRODATA SYSTEMS ===== -->
+<div class="experience-card">
+  <div class="experience-logo">
+    <img src="fgv-logo.png" alt="FGV Prodata Systems Logo">
+  </div>
+  <div class="experience-content">
+    <span class="experience-year">2025</span>
+    <h3>
+      <a href="https://www.google.com/maps/search/Wisma+FGV" target="_blank">
+        FGV Prodata Systems Sdn. Bhd.
+      </a>
+    </h3>
+    <div class="experience-role">
+      Managed Service Business Development Department Intern
+    </div>
+    <ul class="experience-scope">
+      <li>Created costing sheets for project planning and evaluation.</li>
+      <li>Compiled and organized project documentation and files.</li>
+      <li>Assisted the team in business development and managed service activities.</li>
+      <li>Supported departmental administrative and project-related tasks.</li>
+    </ul>
+  </div>
+</div>
+
+</main>
+
+<footer>
+All Rights Reserved by Muhammad Amirul Haqymie
+</footer>
+
+<script src="particles.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

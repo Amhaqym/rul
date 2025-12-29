@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Me</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ================= HERO ================= */
+.hero-bg{
+  position:relative;
+  margin-top:-2px;
+  height:780px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.92) 0%,
+      rgba(0,0,0,0.45) 30%,
+      rgba(0,0,0,0.45) 70%,
+      rgba(0,0,0,1) 100%
+    ),
+    url("storm-bg.jpg") center/cover no-repeat;
+  z-index:1;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding-top:35px;
+  z-index:3;
+}
+
+.hero-resume{
+  margin-top:40px;
+  width:85%;
+}
+
+.hero-nav{
+  margin-top:18px;
+  display:flex;
+  gap:20px;
+  padding:10px 22px;
+  background:rgba(0,0,0,.45);
+  backdrop-filter:blur(12px);
+  border-radius:30px;
+}
+
+.hero-nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.hero-nav a:hover{
+  color:red;
+}
+
+.tight{
+  margin-top:15px;
+}
+
+/* ================= MARQUEE ================= */
+.top-marquee{
+  overflow:hidden;
+}
+
+.marquee-track{
+  display:inline-block;
+  white-space:nowrap;
+  animation: marquee-left 18s linear infinite;
+}
+
+@keyframes marquee-left{
+  from{ transform:translateX(100%); }
+  to{ transform:translateX(-100%); }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- ===== MARQUEE ===== -->
+<div class="top-marquee">
+  <div class="marquee-track">
+    Welcome to my website
+  </div>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar about-right">
+<ul>
+<li><a class="active" href="index.html">About Me</a></li>
+<li><a href="work-experience.html">Work Experience</a></li>
+<li><a href="education.html">Education</a></li>
+<li><a href="certificates.html">Certificates</a></li>
+<li><a href="song.html">Song</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<!-- ================= HERO ================= -->
+<div class="hero-bg">
+  <div class="hero-overlay">
+
+    <!-- DATE & TIME -->
+    <div class="datetime-wrapper">
+      <span id="datetime"></span>
+    </div>
+
+    <!-- MUSIC -->
+    <div class="music-player">
+      <button id="playBtn" class="play-btn">▶</button>
+      <div class="progress-container" id="progressContainer">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <!-- MINI NAV -->
+    <div class="hero-nav">
+      <a href="#about">About Me</a>
+      <a href="#schedule">Weekly Schedule</a>
+      <a href="#skills">Skills</a>
+    </div>
+
+    <!-- AUDIO -->
+    <audio id="bgMusic">
+      <source src="song.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- RESUME -->
+    <div class="hero-resume">
+      <section class="glass-section resume-flex">
+        <div class="resume-image">
+          <img src="profile.jpeg" alt="Resume Photo">
+        </div>
+
+        <div class="resume-content">
+          <h2>Hello, I'm <span>Muhammad Amirul Haqymie</span></h2>
+          <p class="subtitle">Information Management Student | UiTM</p>
+          <p>
+            Welcome to my personal portfolio. I am an information management student
+            with a strong interest in digital information handling and content organization.
+          </p>
+          <a href="resume.pdf" class="resume-btn" target="_blank">View Resume</a>
+        </div>
+      </section>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= MAIN ================= -->
+<main class="main-wrapper">
+
+<section id="about" class="glass-section tight">
+<h2>About Me</h2>
+<div class="about-bar"><span class="icon">👤</span><span class="label">Name</span><span class="value">Muhammad Amirul Haqymie Bin Razali</span></div>
+<div class="about-bar"><span class="icon">🎂</span><span class="label">Date of Birth</span><span class="value">17 June 2005</span></div>
+<div class="about-bar"><span class="icon">🎈</span><span class="label">Age</span><span class="value">20</span></div>
+<div class="about-bar"><span class="icon">📍</span><span class="label">Birthplace</span><span class="value">Hospital Kuala Lumpur</span></div>
+<div class="about-bar"><span class="icon">⚖️</span><span class="label">Weight</span><span class="value">50 kg</span></div>
+<div class="about-bar"><span class="icon">📏</span><span class="label">Height</span><span class="value">171 cm</span></div>
+<div class="about-bar"><span class="icon">🥩</span><span class="label">Favourite Food</span><span class="value">Steak</span></div>
+<div class="about-bar"><span class="icon">🎮</span><span class="label">Hobbies</span><span class="value">Sleeping, reading, watching movies & playing games</span></div>
+</section>
+
+<!-- ===== WEEKLY SCHEDULE (NO ANIMATION) ===== -->
+<section id="schedule" class="glass-section tight">
+<h2>Weekly Schedule</h2>
+<table class="schedule-table">
+<tr>
+<th>Day</th>
+<th>8–10 AM</th>
+<th>10–12 PM</th>
+<th>12–1 PM</th>
+<th>1–2 PM</th>
+<th>2–5 PM</th>
+<th>5–7 PM</th>
+<th>7–9 PM</th>
+<th>9–11 PM</th>
+</tr>
+
+<tr>
+<th>Monday</th>
+<td>IMD317</td>
+<td>IMD313</td>
+<td>Break</td>
+<td>Lunch</td>
+<td>IMD316</td>
+<td>Workout</td>
+<td>Free</td>
+<td>Revision</td>
+</tr>
+
+<tr>
+<th>Tuesday</th>
+<td>Driving</td>
+<td>Free</td>
+<td>Free</td>
+<td>Lunch</td>
+<td>Free</td>
+<td>Free</td>
+<td>Free</td>
+<td>Revision</td>
+</tr>
+
+<tr>
+<th>Wednesday</th>
+<td>IMD313</td>
+<td>IMD317</td>
+<td>Break</td>
+<td>Lunch</td>
+<td>IMD316</td>
+<td>Workout</td>
+<td>Free</td>
+<td>Revision</td>
+</tr>
+
+<tr>
+<th>Thursday</th>
+<td>Driving</td>
+<td>Free</td>
+<td>Free</td>
+<td>Lunch</td>
+<td>IMD318</td>
+<td>Free</td>
+<td>Free</td>
+<td>Revision</td>
+</tr>
+
+<tr>
+<th>Friday</th>
+<td>Free</td>
+<td>Free</td>
+<td>Friday Prayer</td>
+<td>Friday Prayer</td>
+<td>Free</td>
+<td>Workout</td>
+<td>Free</td>
+<td>Revision</td>
+</tr>
+</table>
+</section>
+
+<section id="skills" class="glass-section tight">
+<h2>My Skills</h2>
+<div class="skill"><span>Bahasa Melayu & English</span><div class="progress"><div class="progress-bar" data-width="85%">85%</div></div></div>
+<div class="skill"><span>Microsoft Office & Google Workspace</span><div class="progress"><div class="progress-bar" data-width="80%">80%</div></div></div>
+<div class="skill"><span>Canva & CapCut</span><div class="progress"><div class="progress-bar" data-width="75%">75%</div></div></div>
+<div class="skill"><span>HTML, CSS, JS & C++</span><div class="progress"><div class="progress-bar" data-width="65%">65%</div></div></div>
+</section>
+
+</main>
+
+<footer>All Rights Reserved by Muhammad Amirul Haqymie Bin Razali</footer>
+
+<script src="particles.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

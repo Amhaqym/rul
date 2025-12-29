@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ================= PARTICLES ================= */
+#particles{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+}
+
+/* ================= CONTACT PAGE ================= */
+
+.contact-wrapper{
+  width:75%;
+  margin:80px auto;
+  padding:50px;
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(16px);
+  border-radius:32px;
+  box-shadow:0 0 45px rgba(255,0,0,.3);
+}
+
+.contact-title{
+  text-align:center;
+  color:#ff4d4d;
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.contact-subtitle{
+  text-align:center;
+  color:#ccc;
+  margin-bottom:50px;
+}
+
+/* ===== ICON GRID ===== */
+.contact-icons{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:40px;
+  text-align:center;
+}
+
+/* ===== ICON CARD ===== */
+.icon-card{
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(18px);
+  border-radius:24px;
+  padding:30px;
+  box-shadow:0 0 25px rgba(255,0,0,.2);
+  transition:.3s ease;
+  text-decoration:none;
+}
+
+.icon-card:hover{
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 0 45px rgba(255,0,0,.45);
+}
+
+.icon-card img{
+  width:70px;
+  height:70px;
+  margin-bottom:15px;
+}
+
+.icon-card p{
+  color:#ddd;
+  font-size:14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .contact-icons{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:480px){
+  .contact-icons{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== PARTICLES ===== -->
+<canvas id="particles"></canvas>
+
+<div class="top-marquee">
+  <div class="marquee-track">Feel free to reach out to me anytime</div>
+</div>
+
+<nav class="navbar about-right">
+<ul>
+<li><a href="index.html">About Me</a></li>
+<li><a href="work-experience.html">Work Experience</a></li>
+<li><a href="education.html">Education</a></li>
+<li><a href="certificates.html">Certificates</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a class="active" href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<main class="contact-wrapper">
+
+<h2 class="contact-title">Contact Me</h2>
+<p class="contact-subtitle">Connect with me through these platforms</p>
+
+<div class="contact-icons">
+
+  <!-- WHATSAPP -->
+  <a class="icon-card" href="https://wa.me/601121858347" target="_blank">
+    <img src="whatsapp.png" alt="WhatsApp">
+    <p>WhatsApp</p>
+  </a>
+
+  <!-- GMAIL -->
+  <a class="icon-card" href="mailto:qymie05@gmail.com">
+    <img src="gmail.png" alt="Gmail">
+    <p>qymie05@gmail.com</p>
+  </a>
+
+  <!-- TELEGRAM -->
+  <a class="icon-card" href="https://t.me/Noth1ng_05" target="_blank">
+    <img src="telegram.png" alt="Telegram">
+    <p>@Noth1ng_05</p>
+  </a>
+
+  <!-- INSTAGRAM -->
+  <a class="icon-card" href="https://www.instagram.com/_.myrulll" target="_blank">
+    <img src="instagram.png" alt="Instagram">
+    <p>@_.myrulll</p>
+  </a>
+
+</div>
+
+</main>
+
+<footer>
+All Right Reserve by Muhammad Amirul Haqymie
+</footer>
+
+<script src="particles.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

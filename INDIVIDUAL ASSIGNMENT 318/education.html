@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Education</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ================= EDUCATION PAGE ONLY ================= */
+
+.education-wrapper{
+  width:85%;
+  margin:40px auto;
+}
+
+.education-title{
+  text-align:center;
+  color:#ff4d4d;
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.education-subtitle{
+  text-align:center;
+  color:#aaa;
+  margin-bottom:50px;
+}
+
+/* ===== TIMELINE ===== */
+.timeline{
+  position:relative;
+  margin:60px auto;
+}
+
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  width:3px;
+  height:100%;
+  background:rgba(255,77,77,.6);
+  box-shadow:0 0 15px rgba(255,0,0,.6);
+  transform:translateX(-50%);
+}
+
+/* ===== ITEM ===== */
+.timeline-item{
+  position:relative;
+  width:50%;
+  padding:20px 40px;
+}
+
+.timeline-item.left{ left:0; text-align:right; }
+.timeline-item.right{ left:50%; }
+
+/* ===== DOT ===== */
+.timeline-dot{
+  position:absolute;
+  top:45px;
+  width:16px;
+  height:16px;
+  background:#ff4d4d;
+  border-radius:50%;
+  box-shadow:0 0 15px rgba(255,0,0,.8);
+}
+
+.timeline-item.left .timeline-dot{ right:-8px; }
+.timeline-item.right .timeline-dot{ left:-8px; }
+
+/* ===== CARD ===== */
+.education-card{
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(24px);
+  border-radius:28px;
+  padding:35px;
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 0 30px rgba(255,0,0,.18);
+  display:flex;
+  gap:25px;
+  align-items:flex-start;
+}
+
+/* ===== LOGO ===== */
+.education-logo{
+  width:110px;
+  height:110px;
+  background:rgba(0,0,0,.35);
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  flex-shrink:0;
+}
+
+.education-logo img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
+
+/* ===== CONTENT ===== */
+.education-content{
+  text-align:left;
+}
+
+.education-content h3 a{
+  color:#fff;
+  text-decoration:none;
+}
+
+.education-content h3 a:hover{
+  color:#ff4d4d;
+  text-decoration:underline;
+}
+
+.education-level{
+  color:#ff6a6a;
+  font-weight:600;
+  margin-bottom:8px;
+}
+
+.education-year{
+  display:inline-block;
+  padding:6px 16px;
+  border-radius:20px;
+  background:#ff4d4d;
+  color:#000;
+  font-weight:600;
+  font-size:14px;
+  margin-bottom:10px;
+}
+
+.education-desc{
+  color:#ccc;
+  line-height:1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .timeline::before{ left:10px; }
+
+  .timeline-item{
+    width:100%;
+    padding-left:50px;
+    padding-right:20px;
+    margin-bottom:40px;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right{
+    left:0;
+    text-align:left;
+  }
+
+  .timeline-dot{ left:2px; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<div class="top-marquee">
+  <div class="marquee-track">Welcome to my website</div>
+</div>
+
+<nav class="navbar about-right">
+<ul>
+<li><a href="index.html">About Me</a></li>
+<li><a href="work-experience.html">Work Experience</a></li>
+<li><a class="active" href="education.html">Education</a></li>
+<li><a href="certificates.html">Certificates</a></li>
+<li><a href="song.html">Song</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<div class="datetime-wrapper">
+  <span id="datetime"></span>
+</div>
+
+<main class="education-wrapper">
+
+<h2 class="education-title">Education</h2>
+<p class="education-subtitle">My academic journey</p>
+
+<div class="timeline">
+
+<!-- 1 -->
+<div class="timeline-item left">
+  <div class="timeline-dot"></div>
+  <div class="education-card">
+    <div class="education-logo"><img src="tabika-kemas.png"></div>
+    <div class="education-content">
+      <span class="education-year">2010 – 2011</span>
+      <h3>
+        <a href="https://www.google.com/maps/search/Tabika+KEMAS" target="_blank">
+          Tabika KEMAS
+        </a>
+      </h3>
+      <div class="education-level">Kindergarten</div>
+      <p class="education-desc">
+        Early childhood education focusing on basic literacy, numeracy, and social development.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- 2 -->
+<div class="timeline-item right">
+  <div class="timeline-dot"></div>
+  <div class="education-card">
+    <div class="education-logo"><img src="skjk2.png"></div>
+    <div class="education-content">
+      <span class="education-year">2012 – 2017</span>
+      <h3>
+        <a href="https://www.google.com/maps/search/SK+Jalan+Kuantan+2" target="_blank">
+          SK Jalan Kuantan 2
+        </a>
+      </h3>
+      <div class="education-level">Primary Education</div>
+      <p class="education-desc">
+        Completed primary education with strong foundation in core academic subjects.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- 3 -->
+<div class="timeline-item left">
+  <div class="timeline-dot"></div>
+  <div class="education-card">
+    <div class="education-logo"><img src="sra-bilal.png"></div>
+    <div class="education-content">
+      <span class="education-year">2012 – 2015</span>
+      <h3>
+        <a href="https://www.google.com/maps/search/SRA+Bilal+Bin+Rabah" target="_blank">
+          SRA Bilal Bin Rabah
+        </a>
+      </h3>
+      <div class="education-level">Primary (Religious)</div>
+      <p class="education-desc">
+        Undertook Islamic education focusing on religious studies and moral values.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- 4 -->
+<div class="timeline-item right">
+  <div class="timeline-dot"></div>
+  <div class="education-card">
+    <div class="education-logo"><img src="smk-sentul.png"></div>
+    <div class="education-content">
+      <span class="education-year">2018 – 2022</span>
+      <h3>
+        <a href="https://www.google.com/maps/search/SMK+Sentul+Utama" target="_blank">
+          SMK Sentul Utama
+        </a>
+      </h3>
+      <div class="education-level">Secondary Education</div>
+      <p class="education-desc">
+        Completed secondary education and obtained SPM qualification.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- 5 -->
+<div class="timeline-item left">
+  <div class="timeline-dot"></div>
+  <div class="education-card">
+    <div class="education-logo"><img src="uitm-logo.png"></div>
+    <div class="education-content">
+      <span class="education-year">Current</span>
+      <h3>
+        <a href="https://www.google.com/maps/search/UiTM+Segamat" target="_blank">
+          UiTM Segamat
+        </a>
+      </h3>
+      <div class="education-level">Diploma in Information Management</div>
+      <p class="education-desc">
+        Currently pursuing a Diploma in Information Management with focus on records,
+        archives, and digital information handling.
+      </p>
+    </div>
+  </div>
+</div>
+
+</div>
+</main>
+
+<footer>
+All Right Reserve by Muhammad Amirul Haqymie
+</footer>
+
+<script src="particles.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
