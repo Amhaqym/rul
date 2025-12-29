@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Certificates</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ================= CERTIFICATES PAGE ONLY ================= */
+
+.cert-wrapper{
+  width:85%;
+  margin:40px auto;
+}
+
+.cert-title{
+  text-align:center;
+  color:#ff4d4d;
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.cert-subtitle{
+  text-align:center;
+  color:#aaa;
+  margin-bottom:40px;
+}
+
+/* ===== GRID (5 PER ROW) ===== */
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  gap:30px;
+}
+
+/* ===== CARD ===== */
+.cert-card{
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(24px);
+  border-radius:22px;
+  padding:16px;
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 0 25px rgba(255,0,0,.18);
+  transition:.3s ease;
+  cursor:pointer;
+}
+
+.cert-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 40px rgba(255,0,0,.35);
+}
+
+/* ===== IMAGE ===== */
+.cert-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:16px;
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  z-index:3000;
+  align-items:center;
+  justify-content:center;
+}
+
+.lightbox.active{
+  display:flex;
+}
+
+.lightbox img{
+  max-width:85%;
+  max-height:85%;
+  border-radius:20px;
+  box-shadow:0 0 45px rgba(255,0,0,.6);
+}
+
+/* ===== CONTROLS ===== */
+.lightbox-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:40px;
+  color:white;
+  cursor:pointer;
+  padding:12px 18px;
+  background:rgba(0,0,0,.4);
+  border-radius:50%;
+  user-select:none;
+}
+
+.lightbox-btn:hover{
+  background:rgba(255,0,0,.6);
+}
+
+.lightbox-prev{ left:40px; }
+.lightbox-next{ right:40px; }
+
+.lightbox-close{
+  position:absolute;
+  top:30px;
+  right:35px;
+  font-size:34px;
+  color:white;
+  cursor:pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1200px){
+  .cert-grid{ grid-template-columns:repeat(3, 1fr); }
+}
+
+@media(max-width:800px){
+  .cert-grid{ grid-template-columns:repeat(2, 1fr); }
+}
+
+@media(max-width:480px){
+  .cert-grid{ grid-template-columns:1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<div class="top-marquee">
+  <div class="marquee-track">Welcome to my website</div>
+</div>
+
+<nav class="navbar about-right">
+<ul>
+<li><a href="index.html">About Me</a></li>
+<li><a href="work-experience.html">Work Experience</a></li>
+<li><a href="education.html">Education</a></li>
+<li><a class="active" href="certificates.html">Certificates</a></li>
+<li><a href="song.html">Song</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<div class="datetime-wrapper">
+  <span id="datetime"></span>
+</div>
+
+<main class="cert-wrapper">
+
+<h2 class="cert-title">Certificates</h2>
+<p class="cert-subtitle">My certifications and achievements</p>
+
+<div class="cert-grid">
+  <div class="cert-card" onclick="openLightbox(0)"><img src="cert-1.jpeg"></div>
+  <div class="cert-card" onclick="openLightbox(1)"><img src="cert-2.jpeg"></div>
+  <div class="cert-card" onclick="openLightbox(2)"><img src="cert-3.jpeg"></div>
+  <div class="cert-card" onclick="openLightbox(3)"><img src="cert-4.jpeg"></div>
+  <div class="cert-card" onclick="openLightbox(4)"><img src="cert-5.jpeg"></div>
+
+  <div class="cert-card" onclick="openLightbox(5)"><img src="cert-6.jpeg"></div>
+  <div class="cert-card" onclick="openLightbox(6)"><img src="cert-7.jpeg"></div>
+  <div class="cert-card" onclick="openLightbox(7)"><img src="cert-8.jpeg"></div>
+  <div class="cert-card" onclick="openLightbox(8)"><img src="cert-9.jpeg"></div>
+  <div class="cert-card" onclick="openLightbox(9)"><img src="cert-10.jpeg"></div>
+</div>
+
+</main>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+  <span class="lightbox-btn lightbox-prev" onclick="prevImage()">⟵</span>
+  <img id="lightbox-img" src="">
+  <span class="lightbox-btn lightbox-next" onclick="nextImage()">⟶</span>
+</div>
+
+<footer>
+All Right Reserve by Muhammad Amirul Haqymie
+</footer>
+
+<script>
+const images = [
+  "cert-1.jpeg","cert-2.jpeg","cert-3.jpeg","cert-4.jpeg","cert-5.jpeg",
+  "cert-6.jpeg","cert-7.jpeg","cert-8.jpeg","cert-9.jpeg","cert-10.jpeg"
+];
+
+let currentIndex = 0;
+
+function openLightbox(index){
+  currentIndex = index;
+  document.getElementById("lightbox-img").src = images[currentIndex];
+  document.getElementById("lightbox").classList.add("active");
+}
+
+function closeLightbox(){
+  document.getElementById("lightbox").classList.remove("active");
+}
+
+function nextImage(){
+  currentIndex = (currentIndex + 1) % images.length;
+  document.getElementById("lightbox-img").src = images[currentIndex];
+}
+
+function prevImage(){
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  document.getElementById("lightbox-img").src = images[currentIndex];
+}
+</script>
+
+<script src="particles.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ================= PARTICLES ================= */
+#particles{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+
+/* ================= GALLERY PAGE ONLY ================= */
+
+.gallery-wrapper{
+  width:85%;
+  margin:60px auto;
+  padding:40px;
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(16px);
+  border-radius:30px;
+  box-shadow:0 0 40px rgba(255,0,0,.25);
+  position:relative;
+  z-index:1;
+}
+
+.gallery-title{
+  text-align:center;
+  color:#ff4d4d;
+  font-size:28px;
+}
+
+.gallery-subtitle{
+  text-align:center;
+  color:#ccc;
+  margin-bottom:40px;
+}
+
+.section-title{
+  color:#ff4d4d;
+  font-size:22px;
+  margin:50px 0 20px;
+}
+
+/* ===== GRID UTAMA ===== */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+}
+
+/* ===== ROW BAWAH (BLOK TENGAH) ===== */
+.center-row{
+  grid-column:2 / span 2;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+/* ===== CARD ===== */
+.gallery-card{
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(20px);
+  border-radius:22px;
+  padding:14px;
+  box-shadow:0 0 25px rgba(255,0,0,.18);
+  transition:.3s ease;
+  cursor:pointer;
+}
+
+.gallery-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 40px rgba(255,0,0,.35);
+}
+
+/* ===== IMAGE & VIDEO (SAIZ SAMA) ===== */
+.gallery-card img,
+.gallery-card video{
+  width:100%;
+  aspect-ratio:16 / 9;
+  object-fit:cover;
+  border-radius:16px;
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+}
+
+.lightbox.active{ display:flex; }
+
+.lightbox img,
+.lightbox video{
+  max-width:90%;
+  max-height:90%;
+  border-radius:20px;
+  box-shadow:0 0 50px rgba(255,0,0,.6);
+}
+
+/* ===== CONTROLS ===== */
+.lightbox-close,
+.lightbox-btn{
+  position:absolute;
+  color:white;
+  font-size:34px;
+  cursor:pointer;
+}
+
+.lightbox-close{
+  top:30px;
+  right:40px;
+}
+
+.lightbox-btn{
+  top:50%;
+  transform:translateY(-50%);
+  padding:12px 18px;
+  background:rgba(0,0,0,.4);
+  border-radius:50%;
+}
+
+.lightbox-prev{ left:40px; }
+.lightbox-next{ right:40px; }
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1200px){
+  .gallery-grid{ grid-template-columns:repeat(3,1fr); }
+  .center-row{
+    grid-column:1 / -1;
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(max-width:800px){
+  .gallery-grid{ grid-template-columns:repeat(2,1fr); }
+  .center-row{ grid-template-columns:repeat(2,1fr); }
+}
+
+@media(max-width:480px){
+  .gallery-grid{ grid-template-columns:1fr; }
+  .center-row{ grid-template-columns:1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== PARTICLES ===== -->
+<canvas id="particles"></canvas>
+
+<div class="top-marquee">
+  <div class="marquee-track">Welcome to my website</div>
+</div>
+
+<nav class="navbar about-right">
+<ul>
+<li><a href="index.html">About Me</a></li>
+<li><a href="work-experience.html">Work Experience</a></li>
+<li><a href="education.html">Education</a></li>
+<li><a href="certificates.html">Certificates</a></li>
+<li><a class="active" href="gallery.html">Gallery</a></li>
+<li><a href="song.html">Song</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<main class="gallery-wrapper">
+
+<h2 class="gallery-title">Gallery</h2>
+<p class="gallery-subtitle">Photos & Videos</p>
+
+<h3 class="section-title">Photos</h3>
+
+<div class="gallery-grid">
+  <div class="gallery-card" onclick="openImage(0)"><img src="gallery-1.jpeg"></div>
+  <div class="gallery-card" onclick="openImage(1)"><img src="gallery-2.jpeg"></div>
+  <div class="gallery-card" onclick="openImage(2)"><img src="gallery-3.jpeg"></div>
+  <div class="gallery-card" onclick="openImage(3)"><img src="gallery-4.jpeg"></div>
+
+  <div class="center-row">
+    <div class="gallery-card" onclick="openImage(4)"><img src="gallery-5.jpeg"></div>
+    <div class="gallery-card" onclick="openImage(5)"><img src="gallery-6.jpeg"></div>
+    <div class="gallery-card" onclick="openImage(6)"><img src="gallery-7.jpeg"></div>
+  </div>
+</div>
+
+<h3 class="section-title">Videos</h3>
+
+<div class="gallery-grid">
+  <div class="center-row">
+    <div class="gallery-card" onclick="openVideo(0)"><video src="video-1.mp4"></video></div>
+    <div class="gallery-card" onclick="openVideo(1)"><video src="video-2.mp4"></video></div>
+    <div class="gallery-card" onclick="openVideo(2)"><video src="video-3.mp4"></video></div>
+  </div>
+</div>
+
+</main>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+  <span class="lightbox-btn lightbox-prev" onclick="prevItem()">⟵</span>
+  <span class="lightbox-btn lightbox-next" onclick="nextItem()">⟶</span>
+  <div id="lightbox-content"></div>
+</div>
+
+<footer>
+All Right Reserve by Muhammad Amirul Haqymie
+</footer>
+
+<script>
+const images=[
+"gallery-1.jpeg","gallery-2.jpeg","gallery-3.jpeg",
+"gallery-4.jpeg","gallery-5.jpeg","gallery-6.jpeg","gallery-7.jpeg"
+];
+
+const videos=[
+"video-1.mp4","video-2.mp4","video-3.mp4"
+];
+
+let currentType="image";
+let currentIndex=0;
+
+function openImage(i){
+  currentType="image";
+  currentIndex=i;
+  showItem();
+}
+
+function openVideo(i){
+  currentType="video";
+  currentIndex=i;
+  showItem();
+}
+
+function showItem(){
+  const box=document.getElementById("lightbox");
+  const content=document.getElementById("lightbox-content");
+  content.innerHTML="";
+
+  if(currentType==="image"){
+    const img=document.createElement("img");
+    img.src=images[currentIndex];
+    content.appendChild(img);
+  }else{
+    const vid=document.createElement("video");
+    vid.src=videos[currentIndex];
+    vid.controls=true;
+    vid.autoplay=true;
+    content.appendChild(vid);
+  }
+
+  box.classList.add("active");
+}
+
+function closeLightbox(){
+  document.getElementById("lightbox").classList.remove("active");
+  document.getElementById("lightbox-content").innerHTML="";
+}
+
+function nextItem(){
+  currentIndex = currentType==="image"
+    ? (currentIndex+1)%images.length
+    : (currentIndex+1)%videos.length;
+  showItem();
+}
+
+function prevItem(){
+  currentIndex = currentType==="image"
+    ? (currentIndex-1+images.length)%images.length
+    : (currentIndex-1+videos.length)%videos.length;
+  showItem();
+}
+</script>
+
+<script src="particles.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
